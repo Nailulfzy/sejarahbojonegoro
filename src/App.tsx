@@ -1436,6 +1436,25 @@ const DatabasePage = ({ lang }: { lang: Language }) => {
   const [pageSize, setPageSize] = useState(25);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedWorker, setSelectedWorker] = useState<any | null>(null);
+  const handleExportCSV = () => {
+  const rows = [
+    ["ID", "Judul Dokumen", "Jenis", "Tahun"],
+    ["1", "Adresboek van de Voornaamste Bedrijfstakken", "Arsip Pemerintah", "1941"],
+    ["2", "Data Sejarah Lain", "Dokumen", "1930"],
+  ];
+
+  const csv = rows.map(row => row.join(",")).join("\n");
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "basis-data-bojonegoro.csv";
+  link.click();
+
+  URL.revokeObjectURL(url);
+};
 
   const filteredSejarah = useMemo(() => {
     const lowerSearch = searchTerm.toLowerCase();
@@ -1553,7 +1572,7 @@ const DatabasePage = ({ lang }: { lang: Language }) => {
                     <div className="h-6 w-px bg-brand-sand"></div>
                   </>
                 )}
-                <button className="flex items-center gap-3 px-8 py-4 bg-brand-text text-white rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-brand-terracotta transition-all">
+                <button onClick={handleExportCSV} className="flex items-center gap-3 px-8 py-4 bg-brand-text text-white rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-brand-terracotta transition-all">
                   <Download size={16} /> {t.database.export}
                 </button>
               </div>
