@@ -503,13 +503,13 @@ const HomePage = ({ onNavigate, lang }: { onNavigate: (p: Page) => void, lang: L
 npm run devspace-y-0"
     >
      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-ivory pt-40 md:pt-48 pb-20">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-ivory pt-28 md:pt-48 pb-16 md:pb-20">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
 <img
   src="/hero-kanan.png"
   alt="Bojonegoro Heritage Background"
-  className="w-full h-full object-contain object-right"
+  className="w-full h-full object-cover md:object-contain object-center md:object-right opacity-40 md:opacity-100"
   style={{ imageRendering: "auto" }}
   referrerPolicy="no-referrer"
 />
@@ -553,25 +553,25 @@ npm run devspace-y-0"
               className="text-left"
             >
               <span className="text-brand-terracotta font-bold uppercase tracking-[0.4em] text-[10px] mb-6 block">{t.home.hero.portal}</span>
-              <h1 className="text-5xl md:text-6xl font-display font-bold text-brand-text leading-[1.1] mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-brand-text leading-[1.1] mb-8">
                 {t.home.hero.title.split('&')[0]} & <br />
                 <span className="italic font-serif font-normal text-brand-terracotta">{lang === 'id' ? 'Basis Data' : 'Historical'}</span> {lang === 'id' ? 'Kesejarahan' : 'Database'}
               </h1>
               
-              <p className="text-brand-text/80 text-lg md:text-xl leading-relaxed mb-12 font-medium max-w-xl text-justify">
+              <p className="text-brand-text/80 text-base sm:text-lg md:text-xl leading-relaxed mb-10 font-medium max-w-xl text-left md:text-justify">
                 {t.home.hero.desc}
               </p>
               
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
                 <button 
                   onClick={() => onNavigate('katalog')}
-                  className="px-10 py-4 bg-brand-terracotta text-white rounded-full font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-brand-terracotta/90 transition-all shadow-lg shadow-brand-terracotta/20 hover:shadow-xl"
+                  className="w-full sm:w-auto px-8 py-4 bg-brand-terracotta text-white rounded-full font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-brand-terracotta/90 transition-all shadow-lg shadow-brand-terracotta/20 hover:shadow-xl"
                 >
                   {t.home.hero.viewCatalog}
                 </button>
                 <button 
                   onClick={() => onNavigate('basis-data')}
-                  className="px-10 py-4 bg-transparent border-2 border-brand-terracotta text-brand-terracotta rounded-full font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-brand-terracotta hover:text-white transition-all"
+                  className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-brand-terracotta text-brand-terracotta rounded-full font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-brand-terracotta hover:text-white transition-all"
                 >
                   {t.home.hero.accessDatabase}
                 </button>
