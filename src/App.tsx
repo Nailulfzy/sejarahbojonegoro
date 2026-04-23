@@ -584,14 +584,14 @@ npm run devspace-y-0"
       {/* Pengantar Section - Redesigned for Premium Layout */}
       <section className="py-40 bg-brand-ivory relative overflow-hidden">
         {/* Artistic Background Elements */}
-        <div className="absolute top-40 -left-64 w-[600px] h-[600px] bg-brand-terracotta/5 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-0 -right-40 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="hidden md:block absolute top-40 -left-64 w-[600px] h-[600px] bg-brand-terracotta/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="ahidden md:block absolute bottom-0 -right-40 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
         
         {/* Subtle Paper Texture */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-6 space-y-12">
               <motion.div
