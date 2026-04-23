@@ -616,7 +616,7 @@ npm run devspace-y-0"
                   <span className="ml-3">Bojonegoro</span>
                 </h2>
 
-                <div className="space-y-10 text-brand-text-muted text-lg md:text-xl leading-relaxed font-medium text-justify max-w-xl">
+                <div className="space-y-8 text-brand-text-muted text-base md:text-xl leading-8 md:leading-relaxed font-medium text-left tracking-normal max-w-xl">
                   <p className="relative">
                     <span className="absolute -left-6 top-0 text-7xl font-serif text-brand-terracotta/10 pointer-events-none">"</span>
                     {t.home.intro.p1}
@@ -630,7 +630,7 @@ npm run devspace-y-0"
             
             {/* Right Visual Column - Layered Collage */}
             <div className="lg:col-span-6 relative">
-              <div className="relative aspect-[4/5] md:aspect-square lg:aspect-auto h-full min-h-[600px]">
+            <div className="relative aspect-[4/5] md:aspect-square lg:aspect-auto h-full min-h-[300px]"> 
                 {/* Main Image Container */}
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -643,13 +643,13 @@ npm run devspace-y-0"
                     <img 
                       src="/kayangan.png" 
                       alt="Kayangan Api" 
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-[2s]" 
+                      className="w-full h-auto md:h-full object-cover hover:scale-110 transition-transform duration-[2s]" 
                       referrerPolicy="no-referrer"
                     />
                   </div>
                   
                   {/* Floating Caption/Badge on Image */}
-                  <div className="absolute -bottom-6 -right-6 bg-brand-terracotta p-6 rounded-2xl shadow-2xl z-30 max-w-[150px]">
+                  <div className="absolute bottom-3 right-3 md:-bottom-6 md:-right-6 bg-brand-terracotta p-4 md:p-6 rounded-2xl shadow-2xl z-30 max-w-[140px]"> 
                     <div className="text-white font-display font-bold text-xs uppercase tracking-widest leading-tight">
                       Sumber Api Abadi Kayangan Api
                     </div>
@@ -683,8 +683,8 @@ npm run devspace-y-0"
                 {/* Watermark/Signature Icon */}
                 <div className="absolute bottom-10 left-10 z-30 opacity-20 hidden lg:block">
                   <History size={120} className="text-brand-terracotta" />
-                </div>
               </div>
+            </div> 
             </div>
           </div>
         </div>
