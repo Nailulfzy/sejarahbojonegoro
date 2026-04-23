@@ -199,6 +199,7 @@ const ContractWorkerDetailModal = ({ worker, onClose, lang }: { worker: any, onC
 };
 
 const Navbar = ({ currentPage, setCurrentPage, lang, setLang }: { currentPage: Page, setCurrentPage: (p: Page) => void, lang: Language, setLang: (l: Language) => void }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = translations[lang];
   const menuItems: { id: Page, label: string }[] = [
     { id: 'beranda', label: t.nav.beranda },
@@ -248,6 +249,32 @@ const Navbar = ({ currentPage, setCurrentPage, lang, setLang }: { currentPage: P
               </button>
             ))}
           </div>
+          <div className="flex md:hidden items-center">
+  <button
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    className="p-2 rounded-xl border border-brand-sand/40"
+  >
+    ☰
+  </button>
+</div>
+{mobileMenuOpen && (
+  <div className="absolute top-full left-0 w-full bg-white border-t border-brand-sand/30 shadow-lg md:hidden z-50">
+    <div className="flex flex-col px-6 py-4">
+      {menuItems.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => {
+            setCurrentPage(item.id);
+            setMobileMenuOpen(false);
+          }}
+          className="text-left py-3 text-[13px] font-bold uppercase tracking-[0.15em] text-brand-text-muted border-b border-brand-sand/20 last:border-0"
+        >
+          {item.label}
+        </button>
+      ))}
+    </div>
+  </div>
+)}
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2 bg-brand-beige/50 p-1 rounded-xl border border-brand-sand/30">
